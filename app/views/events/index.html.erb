@@ -1,0 +1,47 @@
+
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
+
+
+<div class="Events index">
+  <h2>Events</h2>
+
+  <%= link_to("Add New Event", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Events list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Email</th>
+      <th>Category</th>
+      <th>When</th>
+      <th>Where</th>
+      <th>Time</th>
+    </tr>
+    <% @events.each do |event| %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.description %></td>
+      <td><%= event.email %></td>
+      <td><%= event.category %></td>
+      <td><%= event.when %></td>
+      <td><%= event.where %></td>
+      <td><%= event.time %></td>
+
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => event.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => event.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => event.id}, :class => 'action delete') %>
+      </td>
+
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

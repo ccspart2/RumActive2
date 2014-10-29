@@ -1,0 +1,149 @@
+  [1m[36m (14.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (55.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWidgets (20140707111715)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (68.0ms)[0m  [1mCREATE TABLE "widgets" ("id" serial primary key, "name" character varying(255), "description" text, "stock" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140707111715"]]
+  [1m[36m (16.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-29 18:49:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.erb within layouts/application (0.8ms)
+Completed 200 OK in 775ms (Views: 769.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/widgets.js?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+
+
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+Started GET "/assets/widgets.css?body=1" for 127.0.0.1 at 2014-10-29 18:49:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEvents (20141029020216)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (80.6ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "title" character varying(255), "description" text, "email" character varying(255) DEFAULT ' ' NOT NULL, "category" character varying(255), "when" character varying(255), "where" character varying(255), "time" time, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (30.3ms)[0m  CREATE  INDEX  "index_events_on_email" ON "events"  ("email")
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141029020216"]]
+  [1m[35m (20.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.5ms)[0m  SELECT "events".* FROM "events"   ORDER BY events.title ASC
+  Rendered events/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 31.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/widgets.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/widgets.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-29 19:00:11 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/events/create" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XLhpvqiUN+ng7qco+wTAWqU5y5pOGp//ivsbdzEoa24=", "event"=>{"title"=>"Rum", "description"=>"Test", "email"=>"test@", "category"=>"testing", "when"=>"testeo", "where"=>"teste", "time"=>"testo"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("category", "created_at", "description", "email", "title", "updated_at", "when", "where") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["category", "testing"], ["created_at", "2014-10-29 23:00:30.812527"], ["description", "Test"], ["email", "test@"], ["title", "Rum"], ["updated_at", "2014-10-29 23:00:30.812527"], ["when", "testeo"], ["where", "teste"]]
+  [1m[35m (72.7ms)[0m  COMMIT
+Redirected to http://localhost:5000/
+Completed 302 Found in 94ms (ActiveRecord: 74.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.3ms)[0m  [1mSELECT "events".* FROM "events"   ORDER BY events.title ASC[0m
+  Rendered events/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 1.3ms)
+
+
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+Started GET "/assets/widgets.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+Started GET "/assets/widgets.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 19:00:30 -0400

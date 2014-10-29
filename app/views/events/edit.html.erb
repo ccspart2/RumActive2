@@ -1,0 +1,53 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="events edit">
+  <h2>Update Event</h2>
+
+  <%= form_for(:event, :url => {:action => 'update',:id => @event.id}) do |f| %>
+
+    <table summary="Event form fields">
+      <tr>
+        <th>Title</th>
+        <td><%= f.text_field(:title) %></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td><%= f.text_field(:description) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+
+
+	  <tr>
+        <th>Category</th>
+        <td><%= f.text_field(:category) %></td>
+      </tr>
+
+
+	   <tr>
+        <th>When</th>
+        <td><%= f.text_field(:when) %></td>
+      </tr>
+
+
+      <tr>
+        <th>Where</th>
+        <td><%= f.text_field(:where) %></td>
+      </tr>
+
+
+	<tr>
+        <th>Time</th>
+        <td><%= f.text_field(:time) %></td>
+      </tr>
+
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Event") %>
+    </div>
+
+  <% end %>
+</div>

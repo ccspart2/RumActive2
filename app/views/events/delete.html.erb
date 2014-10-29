@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="Event delete">
+  <h2>Delete Event</h2>
+
+  <%= form_for(:event, :url => {:action => 'destroy', :id => @event.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this event?</p>
+
+    <p class="reference-name"><%= @event.title %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Event") %>
+    </div>
+
+  <% end %>
+</div>
